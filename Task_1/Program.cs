@@ -47,19 +47,15 @@ int CheckInputNumber()
         if (int.TryParse(text, out number))
         {
             if (number == 0)
-            {
-              System.Console.WriteLine("заданное число = 0.");
-            }
-            if (number < 0)
-            {
-              System.Console.WriteLine("задано отрицательное число.");
-            } 
-            if (number > 0)
-            {
-               break; 
-            }               
+               System.Console.WriteLine("Введенное значение = 0.");
+
+            else if (number < 0)
+               System.Console.WriteLine("Задано отрицательное значение.");
+            
+            else
+               break;
         }
-        Console.WriteLine("заданное значение не удовлетвояет критериям, попробуйте еще раз.");
-    }        
+        Console.WriteLine("Заданное значение числа не соответствует критерию, попробуйте еще раз.");
+    }
     return number;
 }
