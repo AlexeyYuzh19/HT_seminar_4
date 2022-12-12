@@ -5,8 +5,6 @@
 9012 -> 12
 */
 
-Console.WriteLine("Hello, World!");
-
 Console.Clear();
 Console.ForegroundColor = ConsoleColor.Yellow;
 Console.WriteLine("Hello, World!");
