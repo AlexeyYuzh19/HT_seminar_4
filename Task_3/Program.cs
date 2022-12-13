@@ -9,7 +9,9 @@ Console.ForegroundColor = ConsoleColor.Yellow;
 Console.WriteLine("Вариант первый написания кода задания массива по задаче.\n");
 
 Console.ForegroundColor = ConsoleColor.Green;
-int Max = CheckInputNumber();
+
+System.Console.WriteLine("Зададим массив из 8 элементов. \n");
+int Max = CheckInputNumber("Введите допустимое значение элемента массива: ");
 
 int[] arr = Auto(Max);
 Console.ForegroundColor = ConsoleColor.Red;
@@ -28,7 +30,7 @@ int i;
 int[] a = new int[8];
 for (i = 0; i < 8; i++)
 {
-a[i] = CheckAiNumber();
+a[i] = CheckInputNumber("Введите элемент массива: ");
 }
 Console.ForegroundColor = ConsoleColor.Red;
 System.Console.WriteLine("Из введенных элементов составлен массив:\n[ " + string.Join(" , ", a) + " ]");
@@ -56,14 +58,14 @@ int[] Auto(int M)
     return arr;
 }
 
-int CheckInputNumber()
+int CheckInputNumber(string Text)
 {
     int number;
     string text;
 
     while (true)
     {
-        Console.Write("Зададим массив из 8 элементов. \nВведите допустимое значение элемента массива: ");
+        Console.Write(Text);
         text = Console.ReadLine();
         if (int.TryParse(text, out number))
         {
@@ -73,26 +75,6 @@ int CheckInputNumber()
     }
     return number;
 }
-
-int CheckAiNumber()
-{
-    int number;
-    string text;
-
-    while (true)
-    {
-        Console.Write("Введите элемент массива: ");
-        text = Console.ReadLine();
-        if (int.TryParse(text, out number))
-        {
-            break;
-        }
-        Console.WriteLine("Заданное значение числа не соответствует критерию, попробуйте еще раз.");
-    }
-    return number;
-}
-
-
 
 
 /*   Вариант введения массива в одну строку, но в диапазоне от 0 до 9
